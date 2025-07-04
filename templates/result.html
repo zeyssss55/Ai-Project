@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Jurusan yang Direkomendasikan:</h2>
+<p><strong>{{ jurusan }}</strong></p>
+<p>{{ deskripsi }}</p>
+
+<h3>Skor Minat Kamu:</h3>
+<ul>
+  {% for kategori, skor in scores.items() %}
+    <li>{{ kategori|capitalize }}: {{ skor }}</li>
+  {% endfor %}
+</ul>
+
+<br><a href="/">Coba Lagi</a>
+{% endblock %}

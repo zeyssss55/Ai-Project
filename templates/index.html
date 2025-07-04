@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="POST" action="/result">
+    {% for q in questions %}
+        <p>{{ loop.index }}. {{ q.text }}</p>
+        <select name="{{ q.id }}" required>
+            <option value="5">Sangat Setuju</option>
+            <option value="4">Setuju</option>
+            <option value="3">Netral</option>
+            <option value="2">Tidak Setuju</option>
+            <option value="1">Sangat Tidak Setuju</option>
+        </select>
+    {% endfor %}
+    <br>
+    <button type="submit">Lihat Rekomendasi</button>
+</form>
+{% endblock %}
